@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE abatorConfiguration PUBLIC "-//Apache Software Foundation//DTD Abator for iBATIS Configuration 1.0//EN" "http://ibatis.apache.org/dtd/abator-config_1_0.dtd" >
+<abatorConfiguration >
+  <abatorContext >
+ 	 <!--  数据库连接的信息：驱动类、连接地址、用户名、密码-->
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/sakila" userId="root" password="111111" >
+  	<!--classPathEntry 数据库的JDBC驱动的jar包地址-->
+    <classPathEntry location="D:\javaProgramFile\apache-maven-3.5.0\repository\mysql\mysql-connector-java\5.1.39\mysql-connector-java-5.1.39.jar" />
+    </jdbcConnection>
+    <!--生成java实体类对应的项目以及所在的包-->
+    <javaModelGenerator targetPackage="com.yunlovec.dto.generate" targetProject="ibatisGenerator" />
+    <!--生成mapper.xml对应的项目以及所在的包-->
+    <sqlMapGenerator targetPackage="com.yunlovec.dto.map" targetProject="ibatisGenerator" />
+    <!--生成dao层java类对应的项目以及所在的包-->
+    <daoGenerator targetPackage="com.yunlovec.dao.generate" targetProject="ibatisGenerator" type="GENERIC-CI" />
+    <!--数据相关表配置,schema即为数据库名,tableName为表名,domainObjectName是要生成的实体类-->
+    <table schema="sakila" tableName="payment" >
+      <columnOverride column="" property="" />
+    </table>
+  </abatorContext>
+</abatorConfiguration>
